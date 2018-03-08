@@ -1,0 +1,24 @@
+<!-- react.html -->
+<html>
+    <head>
+        <title>Lightning Network donations</title>
+        <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/axios@0.18.0/dist/axios.js"></script>
+        <script src="https://unpkg.com/react-copy-to-clipboard@5.0.1/build/react-copy-to-clipboard.js"></script>
+        <script src='{{ url_for("static", filename="lntips.js") }}'></script>
+    </head>
+    <body>
+	<h1>Lightning Network Donations Welcome!</h1>
+        <div id="root"></div>
+        <script>
+            window.onload = function()
+            {
+                ReactDOM.render(
+                    React.createElement(LNTips),
+                    document.getElementById('root')
+                );
+            };
+        </script>
+    </body>
+</html>
