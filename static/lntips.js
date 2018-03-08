@@ -23,6 +23,7 @@ class LNTips extends React.Component {
     onCreateInvoice(event)
     {
         var value = parseInt(this.state.value);
+        if (isNaN(value) || (value < 1)) return;
 
         axios.get('/getinvoice', {
             params: {
